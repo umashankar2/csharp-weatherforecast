@@ -1,7 +1,7 @@
 accelerator:
   displayName: C# Accelerator
   description: A C# sample service
-  iconUrl: https://raw.githubusercontent.com/sample-accelerators/icons/master/icon-dotnet.png
+  iconUrl: https://seeklogo.com/images/C/c-sharp-c-logo-02F17714BA-seeklogo.com.png
   tags:
   - dotnet
   - C#
