@@ -6,7 +6,7 @@ This sample is the Weather Forecast RESTful API application made available from 
 
 The starting source for this sample was created using:
 ```
-dotnet new webapi --language C#
+$ dotnet new webapi --language C#
 ```
 
 If the _Dockerfile_ option is elected, the generated project will include a Dockerfile that can be used to create a Docker image for the sample application.
