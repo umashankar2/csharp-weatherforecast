@@ -20,5 +20,5 @@ $ dotnet run
 | URL | Description |
 | --- | --- |
 | https://localhost:5001/swagger | API Documentation |
-| https://localhost:5001/weatherforecast | Weather Forecast Endpoint
+| https://localhost:5001/weatherforecast | Weather Forecast Endpoint |
 
