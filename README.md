@@ -17,8 +17,8 @@ To run the sample application:
 $ dotnet run
 ```
 
-Once running, access the endpoint at https://localhost:5001/weatherforecast
+| URL | Description |
+| --- | --- |
+| https://localhost:5001/swagger | API Documentation |
+| https://localhost:5001/weatherforecast | Weather Forecast Endpoint
 
-```
-$ http --verify=no https://localhost:5001/weatherforecast
-```
