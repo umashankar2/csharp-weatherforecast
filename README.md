@@ -19,8 +19,8 @@ $ dotnet run
 
 | URL | Description |
 | --- | --- |
-| http://localhost:8080/swagger | API Documentation |
-| http://localhost:8080/weatherforecast | Weather Forecast Endpoint |
+| http://localhost:5000/swagger | API Documentation |
+| http://localhost:5000/weatherforecast | Weather Forecast Endpoint |
 
 
 ## Deploying to Kubernetes as a TAP workload with Tanzu CLI
