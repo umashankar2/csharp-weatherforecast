@@ -1,31 +1,33 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Hosting;
-using Microsoft.Extensions.Configuration;
-using Microsoft.Extensions.Hosting;
-using Microsoft.Extensions.Logging;
+using Microsoft.Extensions.FileProviders;
 
-namespace Sample
+var builder = WebApplication.CreateBuilder(args);
+
+// honor PORT var if set
+var port = Environment.GetEnvironmentVariable("PORT") ?? "8080";
+var url = string.Concat("http://0.0.0.0:", port);
+builder.WebHost.UseUrls(url);
+
+// Add services to the container.
+builder.Services.AddControllers();
+
+// Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
+builder.Services.AddEndpointsApiExplorer();
+builder.Services.AddSwaggerGen();
+
+var app = builder.Build();
+
+// Configure the HTTP request pipeline.
+if (app.Environment.IsDevelopment())
 {
-    public class Program
-    {
-        public static void Main(string[] args)
-        {
-            CreateHostBuilder(args).Build().Run();
-        }
-
-        public static IHostBuilder CreateHostBuilder(string[] args)
-        {
-            var port = Environment.GetEnvironmentVariable("PORT") ?? "8080";
-            var url = String.Concat("http://0.0.0.0:", port);
-
-            return Host.CreateDefaultBuilder(args)
-                .ConfigureWebHostDefaults(webBuilder =>
-                {
-                    webBuilder.UseStartup<Startup>().UseUrls(url);
-                });
-        }
-    }
+    app.UseSwagger();
+    app.UseSwaggerUI();
 }
+
+app.UseFileServer(new FileServerOptions
+{
+    FileProvider = new PhysicalFileProvider(Path.Combine(Directory.GetCurrentDirectory(), "StaticFiles")),
+    RequestPath = "",
+});
+
+app.MapControllers();
+app.Run();
