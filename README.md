@@ -2,7 +2,7 @@
 
 A sample accelerator for C#.
 
-This sample is the Weather Forecast RESTful API application made available from Microsoft.  It provides a single endpoint, `/weatherforecast`, that returns a mock forecast for the upcoming several days.
+This sample is the Weather Forecast RESTful API application made available from Microsoft.
 
 The starting source for this sample was created using:
 ```
