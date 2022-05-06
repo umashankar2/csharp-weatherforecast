@@ -6,7 +6,7 @@ This sample is the Weather Forecast RESTful API application made available from 
 
 The starting source for this sample was created using:
 ```
-$ dotnet new webapi --language C#
+$ dotnet new webapi --framework net6.0 --language C#
 ```
 
 ## Running the app locally
@@ -16,12 +16,6 @@ To run the sample application:
 ```
 $ dotnet run
 ```
-
-| URL | Description |
-| --- | --- |
-| http://localhost:5000/swagger | API Documentation |
-| http://localhost:5000/weatherforecast | Weather Forecast Endpoint |
-
 
 ## Deploying to Kubernetes as a TAP workload with Tanzu CLI
 
